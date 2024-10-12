@@ -1,10 +1,18 @@
+<<<<<<< HEAD:index.html
 <!-- <?php
+=======
+<?php
+>>>>>>> 31d12b303a20a5b165e7f378b980aeed6d9286f2:index.php
 if (isset($_POST['form_email'])) {
   //mail send
   echo $_POST['form_email'];
   exit();
 }
+<<<<<<< HEAD:index.html
 ?> -->
+=======
+?>
+>>>>>>> 31d12b303a20a5b165e7f378b980aeed6d9286f2:index.php
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -110,18 +118,30 @@ if (isset($_POST['form_email'])) {
               <div class="widget no-border m-0">
                 <ul class="list-inline">
                   <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white"
+<<<<<<< HEAD:index.html
                       href="tel:+447791283554">+447791283554</a> </li>
                   <li>
                     <a href="https://api.whatsapp.com/send?phone=447791283554&text=Hello!"
                       class="whatsapp-button" target="_blank">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Us" style="width: 50px;" />
+=======
+                      href="#">447791283554</a> </li>
+                  <li>
+                    <a href="https://api.whatsapp.com/send?phone=447791283554&text=Hello!"
+                      class="whatsapp-button" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg  " alt="WhatsApp Us" style="width: 50px;" />
+>>>>>>> 31d12b303a20a5b165e7f378b980aeed6d9286f2:index.php
                     </a>
 
                   </li>
                   <li class="text-white m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-white"></i> Mon-Sat 07:00 to 22:00
                   </li>
                   <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white"
+<<<<<<< HEAD:index.html
                       href="mailto:amjadani@live.com">amjadani@live.com</a> </li>
+=======
+                      href="mailto:www.mubeenaslam1600@gmail.com">amjadani@live.com</a> </li>
+>>>>>>> 31d12b303a20a5b165e7f378b980aeed6d9286f2:index.php
                 </ul>
               </div>
             </div>
