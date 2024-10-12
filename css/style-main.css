@@ -134,6 +134,9 @@ img {
 iframe {
   border: none !important;
 }
+.rambod {
+  font-size: x-large !important;
+}
 /* -------- Headings ---------- */
 h1,
 .h1 {

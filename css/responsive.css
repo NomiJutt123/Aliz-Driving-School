@@ -46,6 +46,10 @@
 	  padding: 7px 20px 0 0;
 	  width: 79%;
 	}
+	.custom-styled {
+		padding: 7px 20px 0 0;
+	  	width: 100%;
+	}
 }
 
 
@@ -237,6 +241,9 @@ html {
 @media only screen and (max-width : 360px) {
 .team-block .team-thumb .styled-icons {
   padding: 8px 20px 0 25px;
+}
+.align-cntr{
+	text-align: center !important;
 }
 .team-block .team-thumb .team-overlay {
   height: 88%;
