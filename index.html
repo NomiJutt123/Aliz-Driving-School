@@ -1057,7 +1057,7 @@
           <div class="col-md-8">
             <h3 class="line-bottom text-uppercase mt-0 mb-20 mt-sm-20 font-16">Send Us a Message<p> We Will Contact you soon</p></h3>
              <!-- Contact Form -->
-            <form id="contact_form" name="contact_form" class="" action="#" method="post">
+             <form id="contact_form" name="contact_form" action="send_email.php" method="post">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group mb-30">
@@ -1097,30 +1097,41 @@
             </form>
             <!-- Contact Form Validation-->
             <script type="text/javascript">
-              $("#contact_form").validate({
-                submitHandler: function (form) {
-                  var form_btn = $(form).find('button[type="submit"]');
-                  var form_result_div = '#form-result';
-                  $(form_result_div).remove();
-                  form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                  var form_btn_old_msg = form_btn.html();
-                  form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                  $(form).ajaxSubmit({
-                    dataType: 'json',
-                    success: function (data) {
-                      if (data.status == 'true') {
-                        $(form).find('.form-control').val('');
+              $(document).ready(function() {
+                  $("#contact_form").validate({
+                      submitHandler: function(form) {
+                          var form_btn = $(form).find('button[type="submit"]');
+                          var form_result_div = '#form-result';
+                          $(form_result_div).remove();
+                          form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                          var form_btn_old_msg = form_btn.html();
+                          form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+              
+                          $.ajax({
+                              url: 'http://localhost/Aliz-Driving-School/send_email.php',
+                              type: $(form).attr('method'),
+                              data: $(form).serialize(),
+                              dataType: 'json',
+                              success: function(data) {
+                                  $(form_result_div).html(data.message).fadeIn('slow');
+                                  if (data.status == 'true') {
+                                      $(form).trigger('reset'); // Reset form fields on success
+                                  }
+                                  setTimeout(function() {
+                                      $(form_result_div).fadeOut('slow');
+                                  }, 6000);
+                              },
+                              error: function(error) {
+                                console.log(error);
+                              },
+                              complete: function() {
+                                  form_btn.prop('disabled', false).html(form_btn_old_msg); // Re-enable the button
+                              }
+                          });
                       }
-                      form_btn.prop('disabled', false).html(form_btn_old_msg);
-                      $(form_result_div).html(data.message).fadeIn('slow');
-                      setTimeout(function () {
-                        $(form_result_div).fadeOut('slow')
-                      }, 6000);
-                    }
                   });
-                }
               });
-            </script>
+              </script>              
           </div>
         </div>
       </div>
